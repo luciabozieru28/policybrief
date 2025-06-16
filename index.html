@@ -1,159 +1,167 @@
 <!DOCTYPE HTML>
 <!--
-	Photon by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+    Photon by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html lang="ro">
 <head>
-	<title>Chatbot Policybrief</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	<style>
-	/* ===== animație fade-in ===== */
-	@keyframes fadeIn {
-		from { opacity: 0; transform: translateY(10px); }
-		to   { opacity: 1; transform: translateY(0); }
-	}
+    <title>Chatbot Policybrief</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+    /* ===== animație fade-in ===== */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
 
-	/* Centrăm conținutul în header */
-	#header .inner {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		text-align: center;
-	}
+    /* Centrăm conținutul în header */
+    #header .inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 
-	/* Lista butoanelor centrată */
-	ul.actions.special {
-		display: flex !important;
-		flex-direction: column;
-		align-items: center;
-		padding: 0;
-		margin: 1rem 0;
-		width: 100%;
-		max-width: 600px;
-	}
-	ul.actions.special li {
-		list-style: none;
-		width: 100%;
-		margin-bottom: 0.5rem;
-	}
-	ul.actions.special li a.button {
-		display: flex !important;         /* buton flex container */
-		flex-wrap: wrap;                /* permite textului să se rupă pe linii */
-		align-items: center;            /* centru vertical */
-		justify-content: center;        /* centru orizontal */
-		text-align: center;             /* text centrat */
-		width: 100% !important;
-		font-size: 1rem;
-		padding: 0.75rem 1rem !important;
-		white-space: normal !important;
-		word-wrap: break-word !important;
-		line-height: 1.2 !important;
-		height: auto !important;
-		min-height: 0 !important;
-		overflow: visible !important;
-	}
+    /* Lista butoanelor centrată */
+    ul.actions.special {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        margin: 1rem 0;
+        width: 100%;
+        max-width: 600px;
+    }
+    ul.actions.special li {
+        list-style: none;
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+    ul.actions.special li a.button {
+        display: flex !important;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100% !important;
+        font-size: 1rem;
+        padding: 0.75rem 1rem !important;
+        white-space: normal !important;
+        word-wrap: break-word !important;
+        line-height: 1.2 !important;
+        height: auto !important;
+        min-height: 0 !important;
+        overflow: visible !important;
+    }
 
-	/* Zona de chat centrată și scroll */
-	#chat-container {
-		width: 100%;
-		max-width: 600px;
-		margin: 2rem auto 0;
-		max-height: 300px;
-		overflow-y: auto;
-	}
+    /* Zona de chat centrată și fără scroll intern */
+    #chat-container {
+        width: 100%;
+        max-width: 600px;
+        margin: 2rem auto 0;
+        /* Containerul se extinde automat, fără scroll intern */
+    }
 
-	/* Mesaje: fade-in și styling */
-	#chat-container .box {
-		animation: fadeIn 0.4s ease-out;
-		font-size: 0.9rem;
-		width: 100%;
-		max-width: 600px;
-		margin: 0.5rem auto;
-		padding: 0.5rem;
-		background: #fff;
-		box-sizing: border-box;
-	}
+    /* Mesaje: fade-in și styling */
+    #chat-container .box {
+        animation: fadeIn 0.4s ease-out;
+        font-size: 0.9rem;
+        width: 100%;
+        max-width: 600px;
+        margin: 0.5rem auto;
+        padding: 0.5rem;
+        background: #fff;
+        box-sizing: border-box;
+    }
 
-	/* Culoare pentru răspunsuri */
-	#chat-container .answer {
-		color: #4686a0 !important;
-	}
+    /* Culoare și centru pentru răspunsuri și întrebări */
+    #chat-container .answer {
+        color: #4686a0 !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        min-height: 3rem;
+    }
 
-	/* ===== Adaptare mobil: text mai mic ===== */
-	@media only screen and (max-width: 480px) {
-		ul.actions.special li a.button {
-			display: block !important;   /* wrap sigur */
-			font-size: 0.85rem !important;
-			padding: 0.5rem 0.75rem !important;
-			line-height: 1.2 !important;
-		}
-	}
+    /* ===== Adaptare mobil: text mai mic ===== */
+    @media only screen and (max-width: 480px) {
+        ul.actions.special li a.button {
+            display: block !important;
+            font-size: 0.85rem !important;
+            padding: 0.5rem 0.75rem !important;
+            line-height: 1.2 !important;
+        }
+    }
 
-</style>
+    </style>
 
 </head>
 <body class="is-preload">
 
-	<section id="header">
-		<div class="inner">
-			<h1>Chatbot Policybrief</h1>
-			<p>Selectează o întrebare pentru a primi răspunsul.</p>
+    <section id="header">
+        <div class="inner">
+            <h1>Chatbot Policybrief</h1>
+            <p>Selectează o întrebare pentru a primi răspunsul.</p>
 
-			<ul class="actions special">
-				<li><a href="#" class="button primary" data-q="1">Ce este și cum funcționează cadrul educațional MTSS (Multi-Tiered System of Supports)?</a></li>
-				<li><a href="#" class="button primary" data-q="2">Ce reprezintă National Literacy Strategy lansată în Anglia în 1998 și ce noutate a adus în predarea din ciclul primar?</a></li>
-				<li><a href="#" class="button primary" data-q="3">În ce constă programul Reading Recovery și cui i se adresează această intervenție individuală?</a></li>
-				<li><a href="#" class="button primary" data-q="4">Care sunt principalele prevederi ale Legii nr. 198/2023 privind structura și funcționarea învățământului preuniversitar?</a></li>
-				<li><a href="#" class="button primary" data-q="5">Ce măsuri fiscal-bugetare impune OUG nr. 115/2023 ?</a></li>
-				<li><a href="#" class="button primary" data-q="6">Care sunt efectele combinate ale Legii nr. 198/2023 și OUG nr. 115/2023 asupra Programului Național de Literație?</a></li>
-			</ul>
+            <ul class="actions special">
+                <li><a href="#" class="button primary" data-q="1">Ce este și cum funcționează cadrul educațional MTSS (Multi-Tiered System of Supports)?</a></li>
+                <li><a href="#" class="button primary" data-q="2">Ce reprezintă National Literacy Strategy lansată în Anglia în 1998 și ce noutate a adus în predarea din ciclul primar?</a></li>
+                <li><a href="#" class="button primary" data-q="3">În ce constă programul Reading Recovery și cui i se adresează această intervenție individuală?</a></li>
+                <li><a href="#" class="button primary" data-q="4">Care sunt principalele prevederi ale Legii nr. 198/2023 privind structura și funcționarea învățământului preuniversitar?</a></li>
+                <li><a href="#" class="button primary" data-q="5">Ce măsuri fiscal-bugetare impune OUG nr. 115/2023 ?</a></li>
+                <li><a href="#" class="button primary" data-q="6">Care sunt efectele combinate ale Legii nr. 198/2023 și OUG nr. 115/2023 asupra Programului Național de Literație?</a></li>
+            </ul>
 
-			<div id="chat-container" class="box alt"></div>
-		</div>
-	</section>
+            <div id="chat-container" class="box alt"></div>
+        </div>
+    </section>
 
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
-	<script>
-		const answers = {
-			1: "MTSS – Multi-Tiered System of Supports este un cadru educațional pe trei niveluri (universal, țintit, intensiv) care integrează predare de calitate, evaluare continuă și intervenții bazate pe date pentru a susține progresul academic, emoțional și comportamental al tuturor elevilor. (sursă: ies.ed.gov)",
-			2: "NLS – National Literacy Strategy (Strategia Națională pentru Literație) este programul lansat în Anglia în 1998; a introdus „literacy hour” zilnic și secvențe clare de predare pentru a ridica nivelul de citire și scriere la ciclul primar. (sursă: cms.wiltshire.gov.uk)",
-			3: "Reading Recovery – intervenție individuală de scurtă durată pentru cei mai slabi cititori din clasa I: un profesor specializat lucrează cu elevul 30 min/zi, timp de 12-20 săptămâni, până când acesta ajunge la nivelul mediu al clasei. (sursă: readingrecovery.org)",
-			4: "Legea nr. 198/2023 – legea învățământului preuniversitar: fixează principiile, structura și funcționarea sistemului școlar de la educație timpurie la liceu, garantează acces echitabil, definește drepturile/obligațiile elevilor și profesorilor, introduce programul „Școala după școală”, trasee duale și noi reguli de disciplină și evaluare. (sursă: legislatie.just.ro și edupedu.ro)",
-			5: "OUG nr. 115/2023 – ordonanța 'trenuleț' de măsuri fiscal-bugetare: îngheață în 2024 salariile, sporurile și premiile bugetarilor la nivelul decembrie 2023, plafonează tichetele valorice, limitează plata orelor suplimentare și suspendă angajările la stat, vizând consolidarea fiscală și reducerea cheltuielilor publice.",
-			6: "Efectele combinate: Legea 198/2023 obligă Ministerul Educației să testeze anual elevii pe o 'platformă națională de alfabetizare funcțională' și să lanseze programe de formare pentru profesori (2024-2025), dar OUG 115/2023 amână formarea până în 2025-2026 și îngheață posturile IT și de 'literacy coach', lăsând platforma în faza pilot, finanțată dintr-un apel european de 41,5 mil. €. (sursă: edupedu.ro)"
-		};
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        const answers = {
+            1: `MTSS – Multi-Tiered System of Supports este un cadru educațional pe trei niveluri (universal, țintit, intensiv) care integrează predare de calitate, evaluare continuă și intervenții bazate pe date pentru a susține progresul academic, emoțional și comportamental al tuturor elevilor. ies.ed.gov`,
+            2: `NLS – National Literacy Strategy (Strategia Națională pentru Literație) este programul lansat în Anglia în 1998; a introdus „literacy hour” zilnic și secvențe clare de predare pentru a ridica nivelul de citire și scriere la ciclul primar. cms.wiltshire.gov.uk`,
+            3: `Reading Recovery – intervenție individuală de scurtă durată pentru cei mai slabi cititori din clasa I: un profesor specializat lucrează cu elevul 30 min/zi, timp de 12-20 săptămâni, până când acesta ajunge la nivelul mediu al clasei. readingrecovery.org`,
+            4: `Legea nr. 198/2023 – legea învățământului preuniversitar: fixează principiile, structura și funcționarea sistemului școlar de la educație timpurie la liceu, garantează acces echitabil, definește drepturile/obligațiile elevilor și profesorilor, introduce programul „Școala după școală”, trasee duale și noi reguli de disciplină și evaluare. legislatie.just.ro edupedu.ro`,
+            5: `OUG nr. 115/2023 – ordonanța „trenuleț” de măsuri fiscal-bugetare: îngheață în 2024 salariile, sporurile și premiile bugetarilor la nivelul decembrie 2023, plafonează tichetele valorice, limitează plata orelor suplimentare și suspendă angajările la stat, vizând consolidarea fiscală și reducerea cheltuielilor publice.`,
+            6: `LEGEA 198/2023 a dat undă verde programului: articolele 98 și 105 obligă Ministerul Educației să testeze anual elevii pe o „platformă națională de alfabetizare funcțională” și să lanseze un program de formare pentru profesori, finanțat de la buget și programat inițial pentru anul școlar 2024-2025. edupedu.ro
+OUG 115/2023 („trenulețul” fiscal) a frânat însă ritmul: a amânat prin prorogare lansarea programului de formare până în anul școlar 2025-2026 și a înghețat angajările în sistemul public, inclusiv posturile IT și de „literacy coach” necesare platformei și intervențiilor remediale. edupedu.ro
+REZULTAT: platforma de literație se află încă în fază pilot, alimentată în principal din apelul european de 41,5 mil. € pentru „Mecanisme de intervenție în alfabetizarea funcțională”, dar fără resurse umane și buget național suficiente pentru a scala rapid la nivelul tuturor școlilor.`,
+        };
 
-		$('#header').on('click', '.button', function(e) {
-			e.preventDefault();
-			const q = $(this).data('q');
-			const chat = $('#chat-container');
-			chat.empty();
+        $('#header').on('click', '.button', function(e) {
+            e.preventDefault();
+            const q = $(this).data('q');
+            const chat = $('#chat-container');
+            chat.empty();
 
-			// Întrebare
-			$('<div>')
-				.addClass('box answer')
-				.text($(this).text())
-				.appendTo(chat);
+            // Întrebare
+            $('<div>')
+                .addClass('box answer')
+                .text($(this).text())
+                .appendTo(chat);
 
-			// Răspuns
-			$('<div>')
-				.addClass('box answer')
-				.text(answers[q])
-				.appendTo(chat);
+            // Răspuns
+            $('<div>')
+                .addClass('box answer')
+                .text(answers[q])
+                .appendTo(chat);
 
-			chat.scrollTop(chat.prop('scrollHeight'));
-		});
-	</script>
+            // Asigurăm vizibilitate completă fără scroll intern
+            chat.css('overflow', 'visible');
+            chat.scrollTop(chat.prop('scrollHeight'));
+        });
+    </script>
 </body>
 </html>
