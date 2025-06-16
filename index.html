@@ -78,7 +78,7 @@
         box-sizing: border-box;
     }
 
-    /* Culoare și centru pentru răspunsuri și întrebări */
+    /* Culoare și centru pentru răspunsuri și întrebări, cu păstrare linii noi */
     #chat-container .answer {
         color: #4686a0 !important;
         display: flex;
@@ -86,6 +86,7 @@
         justify-content: center;
         text-align: center;
         min-height: 3rem;
+        white-space: pre-line; /* păstrează newline ca line-break */
     }
 
     /* ===== Adaptare mobil: text mai mic ===== */
@@ -136,7 +137,9 @@
             4: `Legea nr. 198/2023 – legea învățământului preuniversitar: fixează principiile, structura și funcționarea sistemului școlar de la educație timpurie la liceu, garantează acces echitabil, definește drepturile/obligațiile elevilor și profesorilor, introduce programul „Școala după școală”, trasee duale și noi reguli de disciplină și evaluare. legislatie.just.ro edupedu.ro`,
             5: `OUG nr. 115/2023 – ordonanța „trenuleț” de măsuri fiscal-bugetare: îngheață în 2024 salariile, sporurile și premiile bugetarilor la nivelul decembrie 2023, plafonează tichetele valorice, limitează plata orelor suplimentare și suspendă angajările la stat, vizând consolidarea fiscală și reducerea cheltuielilor publice.`,
             6: `LEGEA 198/2023 a dat undă verde programului: articolele 98 și 105 obligă Ministerul Educației să testeze anual elevii pe o „platformă națională de alfabetizare funcțională” și să lanseze un program de formare pentru profesori, finanțat de la buget și programat inițial pentru anul școlar 2024-2025. edupedu.ro
+
 OUG 115/2023 („trenulețul” fiscal) a frânat însă ritmul: a amânat prin prorogare lansarea programului de formare până în anul școlar 2025-2026 și a înghețat angajările în sistemul public, inclusiv posturile IT și de „literacy coach” necesare platformei și intervențiilor remediale. edupedu.ro
+
 REZULTAT: platforma de literație se află încă în fază pilot, alimentată în principal din apelul european de 41,5 mil. € pentru „Mecanisme de intervenție în alfabetizarea funcțională”, dar fără resurse umane și buget național suficiente pentru a scala rapid la nivelul tuturor școlilor.`,
         };
 
